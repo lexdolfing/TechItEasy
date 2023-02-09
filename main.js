@@ -161,3 +161,64 @@ const inventory = [
     sold: 8,
   },
 ];
+
+// ---------------- OPDRACHT 1: ARRAY METHODEN ----------------------
+
+// 1A
+const tvNames = inventory.map((tv) => {
+  return tv.name;
+});
+console.log(tvNames);
+
+//1B
+const tvSoldOut = inventory.filter((tv) => {
+  return tv.originalStock - tv.sold === 0;
+});
+console.log(tvSoldOut);
+
+//1C
+const tvAmbiLight = inventory.filter((tv) => {
+  return tv.options.ambiLight === true;
+});
+console.log(tvAmbiLight);
+
+//1D
+const tvHighestPriceToLowest = inventory.sort((a, b) => {
+  return a.price - b.price;
+});
+console.log(tvHighestPriceToLowest);
+
+
+
+// ---------------- OPDRACHT 2: ELEMENTEN IN DE DOM PLAATSEN ----------------------
+
+//2A
+let tvsSold = 0;
+for (let i = 0; i<inventory.length; i++) {
+  tvsSold += inventory[i].sold;
+}
+console.log(tvsSold);
+
+//2B
+tvsSoldHTML = document.getElementById("tvs-sold");
+tvsSoldHTML.textContent = tvsSold;
+
+//2C
+let tvsBought = 0;
+for (let i = 0; i<inventory.length; i++) {
+  tvsBought += inventory[i].originalStock;
+}
+console.log(tvsBought);
+
+//2D
+tvsBoughtHTML = document.getElementById("tvs-bought");
+tvsBoughtHTML.textContent = tvsBought;
+
+//2E
+let tvsToBeSold = tvsBought-tvsSold;
+tvsSoldHTML = document.getElementById("tvs-to-be-sold");
+tvsSoldHTML.textContent = tvsToBeSold;
+
+
+// ---------------- OPDRACHT 3 ARRAY METHODEN EN FUNCTIES ----------------------
+

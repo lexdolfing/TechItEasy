@@ -1,0 +1,15 @@
+body {
+    background-color: lightyellow;
+}
+
+#tvs-sold {
+    color: darkgreen;
+}
+
+#tvs-bought {
+    color: darkblue;
+}
+
+#tvs-to-be-sold {
+    color: red;
+}
